@@ -1,33 +1,28 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
+
+const HeaderContainer = styled.div`
+  margin-bottom: 16px;
+  h1 {
+    font-size: 22px;
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+`
 
 const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Welcome to the documentation
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <HeaderContainer>
+    <h1>
+      <Link
+        to="/"
+      >
+        Acme docs
+      </Link>
+    </h1>
+  </HeaderContainer>
 )
 
 export default Header
