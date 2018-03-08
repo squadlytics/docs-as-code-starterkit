@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
+import mixpanel from 'mixpanel-browser'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
@@ -19,24 +20,32 @@ const Card = styled(Link)`
   text-align: center;
 `
 
-const IndexPage = () => {
-  if (process.env.GATSBY_MIXPANEL_KEY) {
-    mixpanel.track("docs.view:homepage")
+class IndexPage extends Component {
+
+  componentDidMount() {
+    console.log(process.env)
+    if (process.env.GATSBY_MIXPANEL_KEY) {
+      mixpanel.init(process.env.GATSBY_MIXPANEL_KEY)
+      mixpanel.track("docs.view:homepage")
+    }
   }
-  return (
-    <div>
-      <h1>Acme documentation</h1>
-      <p>Welcome to your new documentation site!</p>
-      <CardContainer>
-        <Card to="/getting-started">
-          Getting started
-        </Card>
-        <Card to="/about">
-          About us
-        </Card>
-      </CardContainer>
-    </div>
-  )
+
+  render() {
+    return (
+      <div>
+        <h1>Acme documentation</h1>
+        <p>Welcome to your new documentation site!</p>
+        <CardContainer>
+          <Card to="/getting-started">
+            Getting started
+          </Card>
+          <Card to="/about">
+            About us
+          </Card>
+        </CardContainer>
+      </div>
+    )
+  }
 }
 
 export default IndexPage

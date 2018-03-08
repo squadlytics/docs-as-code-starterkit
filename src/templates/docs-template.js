@@ -1,11 +1,18 @@
-import React, { Component } from 'react';
-import Helmet from 'react-helmet';
+import React, { Component } from 'react'
+import mixpanel from 'mixpanel-browser'
+import Helmet from 'react-helmet'
+
 class Template extends Component {
-  render() {
+  componentDidMount() {
     const { markdownRemark: page } = this.props.data;
     if (process.env.GATSBY_MIXPANEL_KEY) {
+      mixpanel.init(process.env.GATSBY_MIXPANEL_KEY)
       mixpanel.track(`docs.view:${page.frontmatter.title}`)
     }
+  }
+
+  render() {
+    const { markdownRemark: page } = this.props.data;
     return (
       <div>
         <Helmet title={`Docs | ${page.frontmatter.title}`} />
