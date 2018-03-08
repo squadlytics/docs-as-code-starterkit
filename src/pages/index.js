@@ -20,7 +20,7 @@ const Card = styled(Link)`
 `
 
 const IndexPage = () => {
-  if (process.env.MIXPANEL_KEY) {
+  if (process.env.GATSBY_MIXPANEL_KEY) {
     mixpanel.track("docs.view:homepage")
   }
   return (
