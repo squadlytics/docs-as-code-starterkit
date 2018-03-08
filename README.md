@@ -31,6 +31,21 @@ All the docs are written in Markdown in /src/docs. You can edit the existing pag
   4. Write your doc in Markdown format and save it.
   5. Go to http://localhost:8000/<path_of_the_doc> to view it in your browser.
 
+## Adding Mixpanel and DocSearch
+
+You can add Mixpanel tracking and search via DocSearch (you'll need to sign up first) by defining environment variables in your dev environment and in your build configuration when deploying to production.
+
+Here's below a template for a dev environment set up using a .env.development file that you should put at the root of the repository.
+
+```
+#.env.development
+GATSBY_MIXPANEL_KEY=<your Mixpanel key>
+GATSBY_DOCSEARCH_API_KEY=<your DocSearch API Key>
+GATSBY_DOCSEARCH_INDEX=<your DocSearch index reference>
+```
+
+Check https://www.gatsbyjs.org/docs/environment-variables/ to know more about setting up environment variables.
+
 ## Deploying
 
 You can easily deploy your docs for free with [Netlify](https://netlify.com). Check out [the tutorial](https://medium.com/squadlytics/how-we-switched-to-documentation-as-code-with-gatsby-js-and-netlify-part-1-2-1f57ad732a05) if you want a step by step guide.

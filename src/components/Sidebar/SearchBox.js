@@ -45,8 +45,8 @@ class SearchBox extends React.Component {
 
     if(window.docsearch){
       window.docsearch({ 
-        apiKey: process.env.DOCSEARCH_API_KEY, 
-        indexName: process.env.DOCSEARCH_INDEX, 
+        apiKey: process.env.GATSBY_DOCSEARCH_API_KEY, 
+        indexName: process.env.GATSBY_DOCSEARCH_INDEX, 
         inputSelector: '#docs-search',
         algoliaOptions: {
           hitsPerPage: 5
