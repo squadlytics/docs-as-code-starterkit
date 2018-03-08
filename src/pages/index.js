@@ -23,7 +23,6 @@ const Card = styled(Link)`
 class IndexPage extends Component {
 
   componentDidMount() {
-    console.log(process.env)
     if (process.env.GATSBY_MIXPANEL_KEY) {
       mixpanel.init(process.env.GATSBY_MIXPANEL_KEY)
       mixpanel.track("docs.view:homepage")
