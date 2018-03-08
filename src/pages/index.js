@@ -19,19 +19,24 @@ const Card = styled(Link)`
   text-align: center;
 `
 
-const IndexPage = () => (
-  <div>
-    <h1>Acme documentation</h1>
-    <p>Welcome to your new documentation site!</p>
-    <CardContainer>
-      <Card to="/getting-started">
-        Getting started
-      </Card>
-      <Card to="/about">
-        About us
-      </Card>
-    </CardContainer>
-  </div>
-)
+const IndexPage = () => {
+  if (process.env.MIXPANEL_KEY) {
+    mixpanel.track("docs.view:homepage")
+  }
+  return (
+    <div>
+      <h1>Acme documentation</h1>
+      <p>Welcome to your new documentation site!</p>
+      <CardContainer>
+        <Card to="/getting-started">
+          Getting started
+        </Card>
+        <Card to="/about">
+          About us
+        </Card>
+      </CardContainer>
+    </div>
+  )
+}
 
 export default IndexPage
