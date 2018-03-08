@@ -19,7 +19,7 @@ const SidebarContainer = styled.div`
 
 const Sidebar = () => (
   <SidebarContainer>
-    {process.env.DOCSEARCH_API_KEY && process.env.DOCSEARCH_INDEX && (
+    {process.env.GATSBY_DOCSEARCH_API_KEY && process.env.GATSBY_DOCSEARCH_INDEX && (
       <SearchBox />
     )}
     <header>Quick start</header>

@@ -31,7 +31,7 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.headComponents}
           {css}
-          {process.env.MIXPANEL_KEY && (
+          {process.env.GATSBY_MIXPANEL_KEY && (
             <script
               dangerouslySetInnerHTML={{
                 __html: `
