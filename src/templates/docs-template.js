@@ -3,6 +3,9 @@ import Helmet from 'react-helmet';
 class Template extends Component {
   render() {
     const { markdownRemark: page } = this.props.data;
+    if (process.env.MIXPANEL_KEY) {
+      mixpanel.track(`docs.view:${page.frontmatter.title}`)
+    }
     return (
       <div>
         <Helmet title={`Docs | ${page.frontmatter.title}`} />

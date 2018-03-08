@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import SearchBox from './SearchBox'
 
 const SidebarContainer = styled.div`
   width:  250px;
@@ -18,6 +19,9 @@ const SidebarContainer = styled.div`
 
 const Sidebar = () => (
   <SidebarContainer>
+    {process.env.DOCSEARCH_API_KEY && process.env.DOCSEARCH_INDEX && (
+      <SearchBox />
+    )}
     <header>Quick start</header>
     <ul>
       <li><Link to="/getting-started">Getting Started</Link></li>
