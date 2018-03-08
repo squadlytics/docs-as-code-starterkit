@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import mixpanel from 'mixpanel-browser'
+import mixpanel from 'mixpanel-browser' // import the mixpanel lib
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
@@ -22,6 +22,7 @@ const Card = styled(Link)`
 
 class IndexPage extends Component {
 
+  // Init and send the Mixpanel event
   componentDidMount() {
     if (process.env.GATSBY_MIXPANEL_KEY) {
       mixpanel.init(process.env.GATSBY_MIXPANEL_KEY)

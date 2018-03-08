@@ -1,5 +1,4 @@
 import React from "react"
-import mixpanel from "mixpanel-browser"
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -11,12 +10,6 @@ if (process.env.NODE_ENV === `production`) {
 }
 
 module.exports = class HTML extends React.Component {
-  componentDidMount() {
-    if (process.env.GATSBY_MIXPANEL_KEY) {
-      mixpanel.init(process.env.GATSBY_MIXPANEL_KEY)
-    }
-  }
-
   render() {
     let css
     if (process.env.NODE_ENV === `production`) {
@@ -38,6 +31,7 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.headComponents}
           {css}
+          {/* DocSearch Stylesheet goes here */}
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" /> 
         </head>
         <body {...this.props.bodyAttributes}>
@@ -48,6 +42,7 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          {/* DocSearch JS goes here */}
           <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" />
         </body>
       </html>
