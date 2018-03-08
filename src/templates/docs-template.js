@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import mixpanel from 'mixpanel-browser'
+import mixpanel from 'mixpanel-browser' // import the mixpanel lib
 import Helmet from 'react-helmet'
 
 class Template extends Component {
+  // Init and send the event
   componentDidMount() {
     const { markdownRemark: page } = this.props.data;
     if (process.env.GATSBY_MIXPANEL_KEY) {
