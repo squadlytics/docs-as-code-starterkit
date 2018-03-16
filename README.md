@@ -4,7 +4,7 @@ You can use this repository as a starting point to manage your documentation as 
 
 This docs-as-code example is built on top of [Gatsby.js](https://www.gatsbyjs.org) and is part of a tutorial posted on Medium:
 
-  * [How we switched to documentation-as-code with Gatsby.js and Netlify — part 1/2](https://medium.com/squadlytics/how-we-switched-to-documentation-as-code-with-gatsby-js-and-netlify-part-1-2-1f57ad732a05) 
+  * [How we switched to documentation-as-code with Gatsby.js and Netlify — part 1/2](https://blog.squadlytics.com/how-we-switched-to-documentation-as-code-with-gatsby-js-and-netlify-markdown-hosting-1-3/) 
 
 ## Getting started
 
